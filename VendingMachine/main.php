@@ -1,6 +1,6 @@
 <?php
 
-function addProducts(string $name, int $price)
+function addProducts(string $name, int $price): stdClass
 {
     $products = new stdClass();
     $products->name = $name;
@@ -33,7 +33,7 @@ while ($deposit < $products[$selection]->price) {
     echo "Your selection is: " . $products[$selection]->name . " Price:" . $products[$selection]->price;
     echo PHP_EOL;
 
-    echo "Your deposid is: " . $deposit;
+    echo "Your deposit is: " . $deposit;
     echo PHP_EOL;
     $insertedCoins = readline("Enter your coin: ");
 
@@ -42,18 +42,18 @@ while ($deposit < $products[$selection]->price) {
         echo "invalid coin";
         echo PHP_EOL;
     } else {
-        $deposit += $insertedCoins;
+        $deposit += (int) $insertedCoins;
     }
 
 }
 
 echo PHP_EOL;
 
-echo "Your total deposit was {$deposit} and " . "Reminder is: " . $reminder = $deposit - ($products[$selection]->price);
+echo "Your total deposit was $deposit and " . "Reminder is: " . $reminder = $deposit - ($products[$selection]->price);
 echo PHP_EOL;
 echo "Take your change: ";
 foreach ($coins as $coin) {
-    $times = floor($reminder / $coin,);
+    $times = floor($reminder / $coin);
     if ($times > 0) {
         echo "Coin:" . $coin . " Times " . $times;
         echo PHP_EOL;

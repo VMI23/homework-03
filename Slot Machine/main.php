@@ -2,7 +2,7 @@
 
 $board = [[]];
 
-function addGameEleements(string $name, int $price)
+function addGameElements(string $name, int $price): stdClass
 {
     $gameSymbols = new stdClass();
     $gameSymbols->name = $name;
@@ -11,11 +11,11 @@ function addGameEleements(string $name, int $price)
 }
 
 $gameSymbols = [
-    0 => addGameEleements("A", 5),
-    1 => addGameEleements("K", 4),
-    2 => addGameEleements("Q", 3),
-    3 => addGameEleements("J", 2),
-    4 => addGameEleements("10", 1)
+    0 => addGameElements("A", 5),
+    1 => addGameElements("K", 4),
+    2 => addGameElements("Q", 3),
+    3 => addGameElements("J", 2),
+    4 => addGameElements("10", 1)
 ];
 
 $winningLines = [
